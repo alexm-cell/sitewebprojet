@@ -24,3 +24,10 @@ git push origin css-styles
 git checkout main
 git merge css-styles
 git push origin main
+
+nano styles.css
+git push origin main
+
+git add styles.css
+git commit -m "UPDATED FICHIER CSS3
+git push orign main
