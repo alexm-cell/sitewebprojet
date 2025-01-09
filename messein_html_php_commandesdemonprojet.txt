@@ -1,0 +1,45 @@
+# Fichier des commandes Git d'Alexandre Messein pour HTML et PHP
+# Date : 09/01/2025
+
+# Création du projet et initialisation du dépôt
+git init
+git add .
+git commit -m "Initial commit"
+
+# Création de la branche pour la partie HTML
+git checkout -b html
+
+# Création du fichier index.html pour la partie HTML
+echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>E-Commerce</title><link rel='stylesheet' href='styles.css'></head><body><header><h1>Mon E-Commerce</h1><nav><ul><li><a href='#'>Accueil</a></li><li><a href='#'>Produits</a></li><li><a href='#'>Contact</a></li></ul></nav></header><main><section id='products'><h2>Nos Produits</h2><div class='product'><h3>Produit 1</h3><p>Prix : 20€</p><button>Ajouter au panier</button></div><div class='product'><h3>Produit 2</h3><p>Prix : 30€</p><button>Ajouter au panier</button></div></section></main><footer><p>&copy; 2025 Mon E-Commerce</p></footer><script src='scripts.js'></script></body></html>" > index.html
+
+# Ajout du fichier index.html
+git add index.html
+git commit -m "Ajout de la page index.html pour la partie HTML"
+
+# Création de la branche pour la partie PHP
+git checkout -b php
+
+# Création du fichier backend.php pour la partie PHP
+echo "<?php\n// Traitement backend PHP pour la gestion des produits et commandes\n// Connexion à la base de données et traitement des demandes\n?>" > backend.php
+
+# Ajout du fichier backend.php
+git add backend.php
+git commit -m "Ajout du fichier backend.php pour la gestion des produits en PHP"
+
+# Retour à la branche main pour préparer la fusion
+git checkout main
+git pull origin main
+
+# Fusion de la branche HTML dans main
+git merge html
+git commit -m "Fusion de la branche HTML dans main"
+
+# Fusion de la branche PHP dans main
+git merge php
+git commit -m "Fusion de la branche PHP dans main"
+
+# Pousser les modifications sur GitHub
+git push origin main
+
+# Afficher l'historique des commits
+git log 
