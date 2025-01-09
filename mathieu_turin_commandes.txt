@@ -1,0 +1,10 @@
+#git add scripts.js
+#git commit -m "Add JavaScript functionality and PHP backend"
+#git push origin js-features
+#git checkout js-features
+#git status 
+#git add . 
+#git commit -m "Implement JavaScript functionalities"
+#git push origin js-features
+#git merge js 
+#git push origin main

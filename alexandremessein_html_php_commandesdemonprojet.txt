@@ -1,0 +1,445 @@
+# Fichier des commandes Git d'Alexandre Messein pour HTML et PHP
+# Date : 09/01/2025
+
+# Création de mon projet et initialisation de mon dépôt
+git init
+git add .
+git commit -m "Initial commit"
+
+# Création de la branche pour ma partie HTML
+git checkout -b html
+
+# Création du fichier index.html pour la partie HTML
+echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>E-Commerce</title><link rel='stylesheet' href='styles.css'></head><body><header><h1>Mon E-Commerce</h1><nav><ul><li><a href='#'>Accueil</a></li><li><a href='#'>Produits</a></li><li><a href='#'>Contact</a></li></ul></nav></header><main><section id='products'><h2>Nos Produits</h2><div class='product'><h3>Produit 1</h3><p>Prix : 20€</p><button>Ajouter au panier</button></div><div class='product'><h3>Produit 2</h3><p>Prix : 30€</p><button>Ajouter au panier</button></div></section></main><footer><p>&copy; 2025 Mon E-Commerce</p></footer><script src='scripts.js'></script></body></html>" > index.html
+
+# Ajout de mon fichier index.html
+git add index.html
+git commit -m "Ajout de la page index.html pour la partie HTML"
+
+# Création de ma branche pour ma partie PHP
+git checkout -b php
+
+# Création de mon fichier backend.php pour ma partie PHP
+echo "<?php\n// Traitement backend PHP pour la gestion des produits et commandes\n// Connexion à la base de données et traitement des demandes\n?>" > backend.php
+
+# Ajout de mon fichier backend.php
+git add backend.php
+git commit -m "Ajout du fichier backend.php pour la gestion des produits en PHP"
+
+# Retour ma branche main pour la fusion de mon travail
+git checkout main
+git pull origin main
+
+# Fusion de ma branche HTML dans main
+git merge html
+git commit -m "Fusion de la branche HTML dans main"
+
+# Fusion de ma branche PHP dans main
+git merge php
+git commit -m "Fusion de la branche PHP dans main"
+
+# Pousser les modifications sur mon GitHub
+git push origin main
+
+# Afficher l'historique de mes commits
+git log 
+
+J'ai fais la partie html php du projet, je suis le chef du groupe et hary a fais la partie css et mathieu la partie js.
+
+
+Voici l'historique de mon terminal git :
+
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git init
+Reinitialized existing Git repository in C:/Users/admin/.git/
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git add remote origin https://github.com/alexm-cell/sitewebprojet
+fatal: pathspec 'remote' did not match any files
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git clone https://github.com/alexm-cell/sitewebprojet
+Cloning into 'sitewebprojet'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$  git add remote origin https://github.com/alexm-cell/sitewebprojet
+fatal: pathspec 'remote' did not match any files
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git clone https://github.com/alexm-cell/sitewebprojet.git
+cd sitewebprojet
+fatal: destination path 'sitewebprojet' already exists and is not an empty directory.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git checkout -b html-main
+git push -u origin html-main
+
+git checkout -b css-styling
+git push -u origin css-styling
+
+git checkout -b js-features
+git push -u origin js-features
+Switched to a new branch 'html-main'
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'html-main' on GitHub by visiting:
+remote:      https://github.com/alexm-cell/sitewebprojet/pull/new/html-main
+remote:
+To https://github.com/alexm-cell/sitewebprojet
+ * [new branch]      html-main -> html-main
+branch 'html-main' set up to track 'origin/html-main'.
+Switched to a new branch 'css-styling'
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+
+remote:
+remote: Create a pull request for 'css-styling' on GitHub by visiting:
+remote:      https://github.com/alexm-cell/sitewebprojet/pull/new/css-styling
+remote:
+To https://github.com/alexm-cell/sitewebprojet
+ * [new branch]      css-styling -> css-styling
+branch 'css-styling' set up to track 'origin/css-styling'.
+Switched to a new branch 'js-features'
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'js-features' on GitHub by visiting:
+remote:      https://github.com/alexm-cell/sitewebprojet/pull/new/js-features
+remote:
+To https://github.com/alexm-cell/sitewebprojet
+ * [new branch]      js-features -> js-features
+branch 'js-features' set up to track 'origin/js-features'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (js-features)
+$ echo "# Site Web Projet" > README.md
+git add README.md
+git commit -m "Initial commit: Add README"
+git push origin main
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[js-features 68e66c3] Initial commit: Add README
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Everything up-to-date
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (js-features)
+$ git checkout html-main
+Switched to branch 'html-main'
+Your branch is up to date with 'origin/html-main'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html-main)
+$ nano index.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html-main)
+$ git add index.html
+git commit -m "Add HTML structure"
+git push origin html-main
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+[html-main 78d6fad] Add HTML structure
+ 1 file changed, 40 insertions(+)
+ create mode 100644 index.html
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 715 bytes | 238.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/alexm-cell/sitewebprojet
+   fb00b61..78d6fad  html-main -> html-main
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html-main)
+$ git checkout -b php-backend
+git push -u origin php-backend
+Switched to a new branch 'php-backend'
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'php-backend' on GitHub by visiting:
+remote:      https://github.com/alexm-cell/sitewebprojet/pull/new/php-backend
+remote:
+To https://github.com/alexm-cell/sitewebprojet
+ * [new branch]      php-backend -> php-backend
+branch 'php-backend' set up to track 'origin/php-backend'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git checkout php-backend
+Already on 'php-backend'
+Your branch is up to date with 'origin/php-backend'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ nano backend.php
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ nano cart.php
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git add scripts.js cart.php
+fatal: pathspec 'scripts.js' did not match any files
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git checkout -b php-backend
+git push -u origin php-backend
+fatal: a branch named 'php-backend' already exists
+Everything up-to-date
+branch 'php-backend' set up to track 'origin/php-backend'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git checkout php-backend
+Already on 'php-backend'
+Your branch is up to date with 'origin/php-backend'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git add backend.php cart.php
+git commit -m "Add initial PHP backend and cart functionalities"
+git push origin php-backend
+warning: in the working copy of 'backend.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'cart.php', LF will be replaced by CRLF the next time Git touches it
+[php-backend 596a1ae] Add initial PHP backend and cart functionalities
+ 2 files changed, 23 insertions(+)
+ create mode 100644 backend.php
+ create mode 100644 cart.php
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 769 bytes | 192.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/alexm-cell/sitewebprojet
+   78d6fad..596a1ae  php-backend -> php-backend
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git push origin cart.php
+error: src refspec cart.php does not match any
+error: failed to push some refs to 'https://github.com/alexm-cell/sitewebprojet'
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git add  cart.php
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git commit -m "Add initial PHP backend and cart functionalities"
+On branch php-backend
+Your branch is up to date with 'origin/php-backend'.
+
+nothing to commit, working tree clean
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git commit -m "cart.php"
+On branch php-backend
+Your branch is up to date with 'origin/php-backend'.
+
+nothing to commit, working tree clean
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git push origin cart.php
+error: src refspec cart.php does not match any
+error: failed to push some refs to 'https://github.com/alexm-cell/sitewebprojet'
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git init
+Reinitialized existing Git repository in C:/Users/admin/.git/
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git add remote origin https://github.com/alexm-cell/sitewebprojet
+fatal: pathspec 'remote' did not match any files
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git clone https://github.com/alexm-cell/sitewebprojet
+Cloning into 'sitewebprojet'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$  git add remote origin https://github.com/alexm-cell/sitewebprojet
+fatal: pathspec 'remote' did not match any files
+
+admin@DESKTOP-AT1PFEA MINGW64 ~ (main)
+$ git clone https://github.com/alexm-cell/sitewebprojet.git
+cd sitewebprojet
+fatal: destination path 'sitewebprojet' already exists and is not an empty direc^Cmin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)m-cell/sitewebprojet'
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (php-backend)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git merge php-backend
+Updating fb00b61..596a1ae
+Fast-forward
+ backend.php | 16 ++++++++++++++++
+ cart.php    |  7 +++++++
+ index.html  | 40 ++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 63 insertions(+)
+ create mode 100644 backend.php
+ create mode 100644 cart.php
+ create mode 100644 index.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/alexm-cell/sitewebprojet
+   fb00b61..596a1ae  main -> main
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git merge html
+git push origin main
+merge: html - not something we can merge
+
+Everything up-to-date
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git checkout html
+git status
+git add .
+git commit -m "Finalize HTML structure"
+git push origin html
+error: pathspec 'html' did not match any file(s) known to git
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+error: src refspec html does not match any
+error: failed to push some refs to 'https://github.com/alexm-cell/sitewebprojet'
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git checkout html
+error: pathspec 'html' did not match any file(s) known to git
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git branch html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (main)
+$ git checkout html
+Switched to branch 'html'
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ nano contact.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git add contact.html
+warning: in the working copy of 'contact.html', LF will be replaced by CRLF the next time Git touches it
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git checkout
+A       contact.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git checkout html
+Already on 'html'
+A       contact.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git commit -m "Ajout de la page contact.html pour le site e-commerce"
+[html a6602ac] Ajout de la page contact.html pour le site e-commerce
+ 1 file changed, 34 insertions(+)
+ create mode 100644 contact.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git push origin html
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 834 bytes | 417.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'html' on GitHub by visiting:
+remote:      https://github.com/alexm-cell/sitewebprojet/pull/new/html
+remote:
+To https://github.com/alexm-cell/sitewebprojet
+ * [new branch]      html -> html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git checkout html
+Already on 'html'
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ nano index.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git add index.html
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git commit -m "Ajout de la page principale index.html pour le site e-commerce"
+On branch html
+nothing to commit, working tree clean
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git push origin html
+Everything up-to-date
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git merge html
+Already up to date.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git push origin main
+Everything up-to-date
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git commit -m "Ajout de la page contact.html pour le site e-commerce"
+On branch html
+nothing to commit, working tree clean
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git merge html
+Already up to date.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ nano messein_html_php_commands.txt
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ delete  messein_html_php_commands.txt
+bash: delete: command not found
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ nano messein_html_php_commandesdemonprojet.txt
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git add messein_html_php_commandesdemonprojet.txt
+warning: in the working copy of 'messein_html_php_commandesdemonprojet.txt', LF will be replaced by CRLF the next time Git touches it
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git commit -m "Ajout du fichier des commandes Git pour HTML et PHP d'Alexandre Messein"
+[html e9629e9] Ajout du fichier des commandes Git pour HTML et PHP d'Alexandre Messein
+ 1 file changed, 45 insertions(+)
+ create mode 100644 messein_html_php_commandesdemonprojet.txt
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git push origin main
+To https://github.com/alexm-cell/sitewebprojet
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/alexm-cell/sitewebprojet'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+admin@DESKTOP-AT1PFEA MINGW64 ~/sitewebprojet (html)
+$ git push origin main
+To https://github.com/alexm-cell/sitewebprojet
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/alexm-cell/sitewebprojet'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details
+
