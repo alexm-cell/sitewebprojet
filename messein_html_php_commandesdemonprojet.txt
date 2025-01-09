@@ -43,3 +43,5 @@ git push origin main
 
 # Afficher l'historique des commits
 git log 
+
+J'ai fais la partie html php du projet, je suis le chef du groupe et hary a fais la partie css et mathieu la partie js.
