@@ -1,8 +1,18 @@
 /* styles.css */
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*background-color: blue;*/
+}
+
+
+
+
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
  
 header {
@@ -11,7 +21,32 @@ header {
     padding: 1rem;
     text-align: center;
 }
- 
+
+nav{
+    background-color: lightgrey;
+    width: 20%;
+    display: flex;
+    /*text-align: center;*/
+    justify-content: space-evenly;
+}
+
+nav a{
+    text-decoration: none;
+    display: block;
+    margin: 3% auto;
+    color:  black;
+    background-color: lightgray;
+    border: solid white;
+    line-height: 2em;
+    border-radius: 100rem;
+    color: darkblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
 nav ul {
     list-style: none;
     padding: 0;
@@ -39,4 +74,22 @@ nav ul li a {
     border: 1px solid #ccc;
     padding: 1rem;
     text-align: center;
+}
+
+main{
+    background-color: lightpink;
+    width: 50%;
+    height:  50vh;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+footer{
+    /*background-color: lightseagreen;*/
+    color: navy;
+    width: 100%;
+    text-align: center;
+    height: 10vh;
 }
