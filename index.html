@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Lien vers QRCode.js pour générer le QR code -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 </head>
 <body>
     <header>
@@ -46,9 +48,13 @@
             </form>
         </section>
 
-        <!-- Section 2FA (cachée initialement) -->
-        <section id="2fa" style="display: none;">
-            <h2>Vérification 2FA</h2>
+        <!-- Section QR Code pour configurer 2FA -->
+        <section id="qrCodeSection" style="display: none;">
+            <h2>Configurer 2FA</h2>
+            <p>Scannez ce QR code avec votre application d'authentification (Google Authenticator, Authy, etc.) :</p>
+            <!-- Élément pour afficher le QR code -->
+            <div id="qrcode"></div>
+            <p>Une fois scanné, entrez le code TOTP généré ci-dessous pour finaliser la connexion.</p>
             <form id="totpForm">
                 <label for="totpCode">Entrez le code TOTP :</label>
                 <input type="text" id="totpCode" name="totpCode" required>
@@ -62,5 +68,34 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        // Exemple de clé secrète TOTP (à générer dynamiquement côté serveur en pratique)
+        const secret = 'JBSWY3DPEHPK3PXP'; // Exemple de clé secrète
+
+        // Générer le QR code pour l'application TOTP
+        const totpUrl = `otpauth://totp/MonEcommerce:${encodeURIComponent('user@example.com')}?secret=${secret}&issuer=MonEcommerce`;
+        const qrcodeElement = document.getElementById('qrcode');
+
+        // Générer et afficher le QR code
+        QRCode.toCanvas(qrcodeElement, totpUrl, function (error) {
+            if (error) console.error(error);
+            console.log('QR code généré!');
+        });
+
+        // Afficher la section QR code après la connexion
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('authSection').style.display = 'none';
+            document.getElementById('qrCodeSection').style.display = 'block';
+        });
+
+        // Traitement du code TOTP
+        document.getElementById('totpForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const enteredTotp = document.getElementById('totpCode').value;
+            // Ici, tu devras vérifier le code TOTP avec la bibliothèque ou API côté serveur
+            alert(`Code TOTP entré : ${enteredTotp}`);
+        });
+    </script>
 </body>
 </html>
