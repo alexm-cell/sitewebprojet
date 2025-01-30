@@ -17,6 +17,8 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Section principale des produits -->
     <main>
         <section id="products">
             <h2>Nos Produits</h2>
@@ -31,10 +33,34 @@
                 <button>Ajouter au panier</button>
             </div>
         </section>
+
+        <!-- Formulaire d'authentification -->
+        <section id="authSection">
+            <h2>Se connecter</h2>
+            <form id="loginForm">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+        </section>
+
+        <!-- Section 2FA (cachée initialement) -->
+        <section id="2fa" style="display: none;">
+            <h2>Vérification 2FA</h2>
+            <form id="totpForm">
+                <label for="totpCode">Entrez le code TOTP :</label>
+                <input type="text" id="totpCode" name="totpCode" required>
+                <button type="submit">Vérifier</button>
+            </form>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Mon E-Commerce</p>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
